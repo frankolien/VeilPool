@@ -1,0 +1,17 @@
+.heading {
+  margin-block-end: var(--veil-space-6);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.625rem, 3.5vw, 2.125rem);
+  font-weight: 620;
+}
+
+.description {
+  margin: var(--veil-space-3) 0 0;
+  max-inline-size: 46rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--veil-text-muted);
+}
