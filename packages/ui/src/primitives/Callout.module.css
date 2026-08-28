@@ -1,0 +1,63 @@
+.callout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--veil-space-4);
+  padding: var(--veil-space-4);
+  border-radius: var(--veil-radius);
+  border: 1px solid var(--veil-border);
+  background: var(--veil-surface-raised);
+  font-family: var(--veil-font-sans);
+}
+
+.body {
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 var(--veil-space-1);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--veil-text);
+}
+
+.content {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--veil-text-muted);
+}
+
+.content > :first-child {
+  margin-top: 0;
+}
+.content > :last-child {
+  margin-bottom: 0;
+}
+
+.action {
+  flex-shrink: 0;
+}
+
+.info {
+  border-left: 2px solid var(--veil-border-strong);
+}
+
+.privacy {
+  border-color: var(--veil-accent-dim);
+  border-left: 2px solid var(--veil-accent);
+}
+
+.warning {
+  border-color: var(--veil-prize-dim);
+  border-left: 2px solid var(--veil-warning);
+}
+
+.danger {
+  border-color: var(--veil-danger-dim);
+  border-left: 2px solid var(--veil-danger);
+}
+
+.success {
+  border-color: var(--veil-success-dim);
+  border-left: 2px solid var(--veil-success);
+}
