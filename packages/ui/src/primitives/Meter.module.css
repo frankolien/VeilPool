@@ -1,0 +1,28 @@
+.track {
+  inline-size: 100%;
+  block-size: 6px;
+  border-radius: var(--veil-radius-full);
+  background: var(--veil-surface-sunken);
+  overflow: hidden;
+}
+
+.fill {
+  block-size: 100%;
+  border-radius: var(--veil-radius-full);
+  transition: inline-size 420ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accent {
+  background: var(--veil-accent);
+}
+.prize {
+  background: var(--veil-prize);
+}
+
+.ring {
+  display: block;
+}
+
+.ringFill {
+  transition: stroke-dashoffset 520ms cubic-bezier(0.4, 0, 0.2, 1);
+}
