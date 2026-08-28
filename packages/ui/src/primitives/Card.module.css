@@ -1,0 +1,57 @@
+.card {
+  background: var(--veil-surface);
+  border: 1px solid var(--veil-border);
+  border-radius: var(--veil-radius-lg);
+  box-shadow: none;
+}
+
+.accent {
+  border-color: color-mix(in srgb, var(--veil-accent) 22%, var(--veil-border));
+  background: var(--veil-surface);
+}
+
+.prize {
+  border-color: color-mix(in srgb, var(--veil-accent) 22%, var(--veil-border));
+  background: var(--veil-surface);
+}
+
+.pad-sm {
+  padding: var(--veil-space-4);
+}
+.pad-md {
+  padding: var(--veil-space-5);
+}
+.pad-lg {
+  padding: var(--veil-space-6);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--veil-space-4);
+  margin-bottom: var(--veil-space-4);
+}
+
+.headerText {
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--veil-text);
+}
+
+.description {
+  margin: var(--veil-space-1) 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--veil-text-muted);
+}
+
+.headerAction {
+  flex-shrink: 0;
+}
