@@ -1,0 +1,116 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-2);
+  font-family: var(--veil-font-sans);
+}
+
+.labelRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--veil-space-3);
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 560;
+  color: var(--veil-text-muted);
+}
+
+.maxHint {
+  font-size: 0.75rem;
+  color: var(--veil-text-subtle);
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  gap: var(--veil-space-2);
+  padding: 0 var(--veil-space-3);
+  background: var(--veil-surface-sunken);
+  border: 1px solid var(--veil-border);
+  border-radius: var(--veil-radius);
+  transition:
+    border-color var(--veil-transition),
+    box-shadow var(--veil-transition);
+}
+
+.control:focus-within {
+  border-color: var(--veil-accent);
+  box-shadow: 0 0 0 3px var(--veil-accent-dim);
+}
+
+.controlError {
+  border-color: var(--veil-danger);
+}
+
+.controlError:focus-within {
+  box-shadow: 0 0 0 3px var(--veil-danger-dim);
+}
+
+.controlDisabled {
+  opacity: 0.55;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--veil-space-3) 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--veil-text);
+  font-family: var(--veil-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.input::placeholder {
+  color: var(--veil-text-subtle);
+}
+
+.symbol {
+  font-size: 0.875rem;
+  font-weight: 560;
+  color: var(--veil-text-muted);
+}
+
+.max {
+  padding: 0.25rem 0.5rem;
+  background: var(--veil-surface-raised);
+  border: 1px solid var(--veil-border);
+  border-radius: var(--veil-radius-sm);
+  color: var(--veil-accent-text);
+  font-family: inherit;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.max:hover:not(:disabled) {
+  border-color: var(--veil-accent);
+}
+
+.max:focus-visible {
+  outline: none;
+  box-shadow: var(--veil-focus-ring);
+}
+
+.hint,
+.error {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.hint {
+  color: var(--veil-text-subtle);
+}
+
+.error {
+  color: var(--veil-danger);
+}
