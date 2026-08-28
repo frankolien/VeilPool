@@ -1,0 +1,9 @@
+.card {
+  container-type: inline-size;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-4);
+}
