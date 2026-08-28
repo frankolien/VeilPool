@@ -1,0 +1,89 @@
+.vault {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-5);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--veil-space-4);
+}
+
+.principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--veil-space-4);
+}
+
+.label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--veil-text-subtle);
+}
+
+.eligibility {
+  display: flex;
+  gap: var(--veil-space-2);
+}
+
+.resultLine {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--veil-text-muted);
+}
+
+.odds {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--veil-space-5);
+}
+
+.oddsNote {
+  margin: var(--veil-space-1) 0 0;
+  max-inline-size: 20rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--veil-text-subtle);
+}
+
+.oddsDetail {
+  flex: 1;
+  min-inline-size: 16rem;
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--veil-text-muted);
+}
+
+.oddsEmpty {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--veil-text-subtle);
+}
+
+.risks {
+  margin: 0;
+  padding-inline-start: var(--veil-space-5);
+  line-height: 1.7;
+}
+
+.risks li + li {
+  margin-block-start: var(--veil-space-2);
+}
+
+.risks strong {
+  color: var(--veil-text);
+}
+
+@media (max-width: 52rem) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
