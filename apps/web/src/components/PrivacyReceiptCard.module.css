@@ -1,0 +1,66 @@
+.receipt {
+  padding: var(--veil-space-4);
+  border: 1px solid var(--veil-accent-dim);
+  border-radius: var(--veil-radius);
+  background: color-mix(in srgb, var(--veil-accent-dim) 30%, var(--veil-surface));
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--veil-space-3);
+  margin-block-end: var(--veil-space-4);
+}
+
+.verify {
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.section + .section {
+  margin-block-start: var(--veil-space-4);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: var(--veil-space-2);
+  margin: 0 0 var(--veil-space-2);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--veil-text-subtle);
+}
+
+.glyphProtected {
+  color: var(--veil-accent);
+  font-size: 0.625rem;
+}
+
+.glyphPublic {
+  color: var(--veil-text-subtle);
+  font-size: 0.625rem;
+}
+
+.list {
+  margin: 0;
+  padding-inline-start: var(--veil-space-5);
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--veil-text-muted);
+}
+
+.list li + li {
+  margin-block-start: 0.25rem;
+}
+
+.inference {
+  margin: var(--veil-space-4) 0 0;
+  padding-block-start: var(--veil-space-3);
+  border-block-start: 1px solid var(--veil-border);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--veil-text-subtle);
+}
