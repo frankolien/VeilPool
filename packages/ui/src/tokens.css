@@ -1,0 +1,132 @@
+/*
+ * VEIL Pool design tokens.
+ *
+ * The palette is dark-first and deliberately narrow: an ink base, one cool
+ * accent for anything confidential, and one warm accent reserved for the prize
+ * and the draw. Reserving the warm hue is what keeps the draw feeling like an
+ * event without the rest of the product feeling like a casino — if amber
+ * appeared on ordinary buttons it would stop meaning anything.
+ *
+ * Light mode is a real theme, not an inversion: savings products are read in
+ * daylight and on shared screens.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* Base surfaces — ink with a blue-green cast, never pure black. */
+  --veil-bg: #0a0a0d;
+  --veil-surface: #111116;
+  --veil-surface-raised: #17171e;
+  --veil-surface-sunken: #07070a;
+  --veil-border: #24242c;
+  --veil-border-strong: #363641;
+
+  /* Text */
+  --veil-text: #f2f0ec;
+  --veil-text-muted: #aaa7a3;
+  --veil-text-subtle: #6f6d72;
+  --veil-text-inverse: #0a0910;
+
+  /* Confidential accent — everything encrypted, sealed, or private. */
+  --veil-accent: #a99cff;
+  --veil-accent-strong: #9384f5;
+  --veil-accent-dim: #252139;
+  --veil-accent-text: #c2b9ff;
+
+  /* Prize accent — the draw, the reserve, winnings. Used sparingly. */
+  --veil-prize: #cdbc84;
+  --veil-prize-strong: #b7a56d;
+  --veil-prize-dim: #2c281d;
+  --veil-prize-text: #e2d39d;
+
+  /* Status */
+  --veil-danger: #f0736b;
+  --veil-danger-dim: #3a1a1a;
+  --veil-warning: #e0b155;
+  --veil-success: #57cc8e;
+  --veil-success-dim: #10281c;
+
+  /* Typography */
+  --veil-font-sans:
+    "Inter Variable", Inter, "SF Pro Display", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --veil-font-mono:
+    ui-monospace, "SF Mono", "JetBrains Mono", "Roboto Mono", Menlo, Consolas, monospace;
+
+  /* Spacing scale */
+  --veil-space-1: 0.25rem;
+  --veil-space-2: 0.5rem;
+  --veil-space-3: 0.75rem;
+  --veil-space-4: 1rem;
+  --veil-space-5: 1.5rem;
+  --veil-space-6: 2rem;
+  --veil-space-7: 3rem;
+  --veil-space-8: 4rem;
+
+  /* Radii */
+  --veil-radius-sm: 6px;
+  --veil-radius: 9px;
+  --veil-radius-lg: 14px;
+  --veil-radius-full: 999px;
+
+  /* Elevation — low-contrast, so cards read as depth rather than as cutouts. */
+  --veil-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --veil-shadow: 0 4px 16px rgb(0 0 0 / 0.35);
+  --veil-shadow-lg: 0 16px 48px rgb(0 0 0 / 0.45);
+
+  --veil-focus-ring: 0 0 0 2px var(--veil-bg), 0 0 0 4px var(--veil-accent);
+
+  --veil-transition: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --veil-bg: #ffffff;
+  --veil-surface: #ffffff;
+  --veil-surface-raised: #ffffff;
+  --veil-surface-sunken: #f6f8fb;
+  --veil-border: #e7ebf0;
+  --veil-border-strong: #d3d9e1;
+
+  --veil-text: #111318;
+  --veil-text-muted: #626873;
+  --veil-text-subtle: #9298a2;
+  --veil-text-inverse: #ffffff;
+
+  --veil-accent: #2474e5;
+  --veil-accent-strong: #1763cd;
+  --veil-accent-dim: #eaf3ff;
+  --veil-accent-text: #1f6ed8;
+
+  --veil-prize: #2474e5;
+  --veil-prize-strong: #1763cd;
+  --veil-prize-dim: #eaf3ff;
+  --veil-prize-text: #1f6ed8;
+
+  --veil-danger: #c0392f;
+  --veil-danger-dim: #fbe9e7;
+  --veil-warning: #2474e5;
+  --veil-success: #2474e5;
+  --veil-success-dim: #eaf3ff;
+
+  --veil-shadow-sm: 0 1px 2px rgb(13 20 24 / 0.06);
+  --veil-shadow: 0 4px 16px rgb(13 20 24 / 0.08);
+  --veil-shadow-lg: 0 16px 48px rgb(13 20 24 / 0.12);
+}
+
+/*
+ * Motion is decorative everywhere in this product — the pool surface, the draw
+ * pulse, the reveal transition. None of it carries information, so all of it is
+ * removable without loss.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
