@@ -1,0 +1,21 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--veil-space-4);
+}
+
+.label {
+  margin: 0 0 var(--veil-space-1);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--veil-text-subtle);
+}
+
+.note {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--veil-text-subtle);
+}
