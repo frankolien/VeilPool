@@ -1,0 +1,44 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--veil-space-1);
+  padding: 0.1875rem 0.5rem;
+  border-radius: var(--veil-radius-full);
+  border: 1px solid transparent;
+  font-family: var(--veil-font-sans);
+  font-size: 0.75rem;
+  font-weight: 560;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.glyph {
+  font-size: 0.6875em;
+  line-height: 1;
+}
+
+.neutral {
+  background: var(--veil-surface-raised);
+  border-color: var(--veil-border);
+  color: var(--veil-text-muted);
+}
+.accent {
+  background: var(--veil-accent-dim);
+  color: var(--veil-accent-text);
+}
+.prize {
+  background: var(--veil-prize-dim);
+  color: var(--veil-prize-text);
+}
+.success {
+  background: var(--veil-success-dim);
+  color: var(--veil-success);
+}
+.danger {
+  background: var(--veil-danger-dim);
+  color: var(--veil-danger);
+}
+.warning {
+  background: var(--veil-prize-dim);
+  color: var(--veil-prize-text);
+}
