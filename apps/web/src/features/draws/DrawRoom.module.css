@@ -1,0 +1,112 @@
+.room {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-5);
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-5);
+}
+
+.stageHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--veil-space-4);
+}
+
+.drawLabel {
+  margin: 0 0 var(--veil-space-2);
+  font-size: 1.25rem;
+  font-weight: 620;
+  letter-spacing: -0.025em;
+}
+
+.countdown {
+  text-align: end;
+}
+
+.countdownLabel {
+  margin: 0 0 var(--veil-space-1);
+  font-size: 0.6875rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--veil-text-subtle);
+}
+
+.prize {
+  color: var(--veil-prize-text);
+}
+
+.statusLine {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--veil-text-muted);
+}
+
+.scan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-2);
+}
+
+.scanText {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--veil-text-subtle);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--veil-space-4);
+}
+
+.actions > :global(button) {
+  min-inline-size: 12rem;
+}
+
+.verify {
+  font-size: 0.8125rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--veil-space-3);
+}
+
+.factLabel {
+  margin: 0 0 var(--veil-space-2);
+  font-size: 0.6875rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--veil-text-subtle);
+}
+
+.factValue {
+  margin: 0;
+  font-family: var(--veil-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.125rem;
+  letter-spacing: -0.02em;
+  color: var(--veil-text);
+}
+
+.factNote {
+  margin: var(--veil-space-2) 0 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--veil-text-subtle);
+}
+
+@media (max-width: 40rem) {
+  .countdown {
+    text-align: start;
+  }
+}
