@@ -1,0 +1,23 @@
+{
+  "name": "veil-pool",
+  "private": true,
+  "version": "0.1.0",
+  "description": "VEIL Pool — confidential prize-linked savings on the Zama Protocol",
+  "license": "BSD-3-Clause-Clear",
+  "packageManager": "pnpm@11.4.0",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "pnpm -r --filter './packages/**' build && pnpm --filter @veil/web build",
+    "dev": "pnpm --filter @veil/web dev",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "contracts:build": "pnpm --filter @veil/contracts build",
+    "contracts:test": "pnpm --filter @veil/contracts test",
+    "abi:sync": "pnpm --filter @veil/contract-abi build"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
+  }
+}
