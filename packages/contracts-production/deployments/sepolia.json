@@ -1,0 +1,10 @@
+{
+  "chainId": 11155111,
+  "deployer": "0xC1A3C760C8F1f25a9C93ed0CccbfC9C0e1534360",
+  "pool": "0x46586569269A86A362E8814531543CAfc6972Baf",
+  "confidentialToken": "0x4E7B06D78965594eB5EF5414c357ca21E1554491",
+  "prizePerDraw": "25000000",
+  "drawPeriodSeconds": 600,
+  "deploymentTransaction": "0xfe81dca6355e2036a92fbb7763da2daee29a698046fb48c52daa6593566701ca",
+  "blockCreated": 11578519
+}
