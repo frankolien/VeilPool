@@ -1,0 +1,66 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-3);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--veil-space-3);
+}
+
+.label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--veil-text-subtle);
+}
+
+.change {
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--veil-text-subtle);
+  font: inherit;
+  font-size: 0.75rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.empty,
+.prompt {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--veil-text-muted);
+}
+
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--veil-space-2);
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: var(--veil-space-4);
+}
+
+.detail {
+  margin: var(--veil-space-1) 0 0;
+  font-size: 0.8125rem;
+  color: var(--veil-text-subtle);
+}
+
+.reached {
+  margin: var(--veil-space-1) 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--veil-success);
+}
