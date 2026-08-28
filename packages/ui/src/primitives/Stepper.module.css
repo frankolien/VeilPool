@@ -1,0 +1,66 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--veil-font-sans);
+  font-size: 0.875rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--veil-space-3);
+  color: var(--veil-text-subtle);
+  transition: color var(--veil-transition);
+}
+
+.glyph {
+  width: 1.125rem;
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+}
+
+.label {
+  min-width: 0;
+}
+
+.pending {
+  color: var(--veil-text-subtle);
+}
+
+.active {
+  color: var(--veil-accent-text);
+  font-weight: 560;
+}
+
+.active .glyph {
+  animation: veil-step-spin 1.4s linear infinite;
+}
+
+.done {
+  color: var(--veil-text-muted);
+}
+
+.done .glyph {
+  color: var(--veil-success);
+}
+
+.skipped {
+  color: var(--veil-text-subtle);
+  opacity: 0.65;
+}
+
+.failed {
+  color: var(--veil-danger);
+  font-weight: 560;
+}
+
+@keyframes veil-step-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
