@@ -1,0 +1,98 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 19rem;
+  gap: var(--veil-space-5);
+  align-items: start;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-5);
+  min-inline-size: 0;
+}
+
+.aside {
+  min-inline-size: 0;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--veil-space-4);
+}
+
+.principalCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-3);
+}
+
+/*
+ * The principal card sits beside a stack of three, so the grid stretches it.
+ * The eligibility badge takes the slack and the note settles at the bottom,
+ * which uses that height instead of leaving a void around a centred block.
+ */
+.eligibility {
+  display: flex;
+  gap: var(--veil-space-2);
+  margin-block-start: var(--veil-space-2);
+}
+
+.principalCard .summaryNote {
+  margin-block-start: auto;
+}
+
+.summarySide {
+  display: flex;
+  flex-direction: column;
+  gap: var(--veil-space-3);
+}
+
+.summaryLabel {
+  margin: 0 0 var(--veil-space-2);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--veil-text-subtle);
+}
+
+.summaryNote {
+  margin: 0;
+  max-inline-size: 34rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--veil-text-muted);
+}
+
+.summaryFoot {
+  margin: var(--veil-space-2) 0 0;
+  font-size: 0.75rem;
+  color: var(--veil-text-subtle);
+}
+
+.drawRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--veil-space-3);
+}
+
+.prizeText {
+  color: var(--veil-prize-text);
+}
+
+@media (max-width: 62rem) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .aside { order: initial; }
+}
+
+@media (max-width: 46rem) {
+  .summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
