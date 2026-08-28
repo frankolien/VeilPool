@@ -1,0 +1,92 @@
+.surface {
+  position: relative;
+  block-size: 13rem;
+  border-radius: var(--veil-radius-lg);
+  overflow: hidden;
+  background:
+    radial-gradient(120% 100% at 50% 0%, color-mix(in srgb, var(--veil-accent) 12%, transparent), transparent 60%),
+    var(--veil-surface-sunken);
+  border: 1px solid var(--veil-border);
+  isolation: isolate;
+}
+
+.water {
+  position: absolute;
+  inset-inline: -20%;
+  inset-block-end: -40%;
+  block-size: 80%;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--veil-accent) 16%, transparent),
+    transparent
+  );
+  border-radius: 46% 44% 0 0;
+  animation: veil-drift 14s ease-in-out infinite;
+}
+
+.droplet {
+  position: absolute;
+  inline-size: 8px;
+  block-size: 10px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: var(--veil-accent);
+  opacity: 0.55;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--veil-accent) 45%, transparent);
+  animation: veil-bob 5.5s ease-in-out infinite;
+}
+
+.pulse {
+  position: absolute;
+  inset-block: 0;
+  inline-size: 34%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--veil-prize) 30%, transparent),
+    transparent
+  );
+  animation: veil-pulse 2.1s linear infinite;
+}
+
+.pulsing .droplet {
+  opacity: 0.85;
+}
+
+.caption {
+  position: absolute;
+  inset-block-end: var(--veil-space-3);
+  inset-inline: 0;
+  text-align: center;
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--veil-text-subtle);
+}
+
+@keyframes veil-drift {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(4%) rotate(1.2deg);
+  }
+}
+
+@keyframes veil-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes veil-pulse {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(420%);
+  }
+}
