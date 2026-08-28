@@ -1,0 +1,71 @@
+@import "@veil/ui/tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-block-size: 100dvh;
+  background: var(--veil-bg);
+  color: var(--veil-text);
+  font-family: var(--veil-font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.008em;
+}
+
+::selection { background: var(--veil-accent); color: var(--veil-text-inverse); }
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--veil-accent-text);
+  text-decoration-color: color-mix(in srgb, var(--veil-accent) 40%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: none;
+  box-shadow: var(--veil-focus-ring);
+  border-radius: var(--veil-radius-sm);
+}
+
+:target {
+  scroll-margin-block-start: 6rem;
+}
+
+/* A skip link is the cheapest possible accessibility win and is missing from
+   almost every crypto front end. */
+.skip-link {
+  position: absolute;
+  inset-inline-start: var(--veil-space-4);
+  inset-block-start: -4rem;
+  z-index: 100;
+  padding: var(--veil-space-3) var(--veil-space-4);
+  background: var(--veil-accent);
+  color: var(--veil-text-inverse);
+  border-radius: var(--veil-radius);
+  font-weight: 600;
+  transition: inset-block-start var(--veil-transition);
+}
+
+.skip-link:focus {
+  inset-block-start: var(--veil-space-4);
+}
