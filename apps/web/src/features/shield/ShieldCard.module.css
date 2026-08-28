@@ -1,0 +1,38 @@
+.pathway {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--veil-space-3);
+  padding: var(--veil-space-3);
+  border-radius: var(--veil-radius);
+  background: var(--veil-surface-sunken);
+  font-family: var(--veil-font-mono);
+  font-size: 0.75rem;
+}
+
+.public,
+.wrapper,
+.confidential {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--veil-radius-sm);
+}
+
+.public {
+  background: var(--veil-surface-raised);
+  color: var(--veil-text-muted);
+  border: 1px dashed var(--veil-border-strong);
+}
+
+.wrapper {
+  color: var(--veil-text-subtle);
+}
+
+.confidential {
+  background: var(--veil-accent-dim);
+  color: var(--veil-accent-text);
+  border: 1px solid color-mix(in srgb, var(--veil-accent) 35%, transparent);
+}
+
+.arrow {
+  color: var(--veil-text-subtle);
+}
