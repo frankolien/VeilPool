@@ -1,0 +1,134 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--veil-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--veil-radius-full);
+  font-family: var(--veil-font-sans);
+  font-weight: 560;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition:
+    background-color var(--veil-transition),
+    border-color var(--veil-transition),
+    color var(--veil-transition),
+    transform var(--veil-transition);
+  white-space: nowrap;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: var(--veil-focus-ring);
+}
+
+/*
+ * A disabled button drops its fill rather than dimming it.
+ *
+ * A dimmed accent fill is still the highest-contrast element on the page, so a
+ * disabled primary action ends up drawing the eye to the one thing the user
+ * cannot do. Falling back to a flat surface keeps the control legible and
+ * readable as unavailable, and leaves the visual emphasis where it belongs.
+ */
+.button:disabled {
+  cursor: not-allowed;
+  background: var(--veil-surface-raised);
+  border-color: var(--veil-border);
+  color: var(--veil-text-subtle);
+}
+
+.ghost:disabled,
+.danger:disabled {
+  background: transparent;
+  opacity: 0.55;
+}
+
+.button:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.sm {
+  min-height: 36px;
+  padding: 0.375rem 0.875rem;
+  font-size: 0.8125rem;
+}
+.md {
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+}
+.lg {
+  min-height: 52px;
+  padding: 0.875rem 1.625rem;
+  font-size: 1.0625rem;
+}
+
+.primary {
+  background: var(--veil-accent);
+  color: var(--veil-text-inverse);
+}
+.primary:not(:disabled):hover {
+  background: var(--veil-accent-strong);
+}
+
+.secondary {
+  background: var(--veil-surface-raised);
+  border-color: var(--veil-border-strong);
+  color: var(--veil-text);
+}
+.secondary:not(:disabled):hover {
+  border-color: var(--veil-accent);
+  color: var(--veil-accent-text);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--veil-text-muted);
+}
+.ghost:not(:disabled):hover {
+  background: var(--veil-surface-raised);
+  color: var(--veil-text);
+}
+
+.danger {
+  background: transparent;
+  border-color: var(--veil-danger);
+  color: var(--veil-danger);
+}
+.danger:not(:disabled):hover {
+  background: var(--veil-danger-dim);
+}
+
+.prize {
+  background: var(--veil-prize);
+  color: var(--veil-text-inverse);
+}
+.prize:not(:disabled):hover {
+  background: var(--veil-prize-strong);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--veil-space-2);
+}
+
+.spinner {
+  width: 0.875em;
+  height: 0.875em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--veil-radius-full);
+  animation: spin 640ms linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
