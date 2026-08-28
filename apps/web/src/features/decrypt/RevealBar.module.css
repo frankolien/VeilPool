@@ -1,0 +1,33 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--veil-space-4);
+  border-color: var(--veil-accent-dim);
+}
+
+.text {
+  min-inline-size: 0;
+}
+
+.title {
+  margin: 0 0 var(--veil-space-1);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.detail {
+  margin: 0;
+  max-inline-size: 44rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--veil-text-muted);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--veil-space-3);
+  flex-shrink: 0;
+}
