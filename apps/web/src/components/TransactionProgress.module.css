@@ -1,0 +1,6 @@
+.wrapper {
+  padding: var(--veil-space-4);
+  border: 1px solid var(--veil-border);
+  border-radius: var(--veil-radius);
+  background: var(--veil-surface-sunken);
+}
