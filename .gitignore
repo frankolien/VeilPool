@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+out/
+build/
+.next/
+.turbo/
+*.tsbuildinfo
+
+# Solidity toolchain
+artifacts/
+cache/
+types/
+typechain/
+typechain-types/
+fhevmTemp/
+coverage/
+coverage.json
+
+# Secrets and local configuration.
+# .env.example files are committed; anything with real values is not.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+
+# Local deployment records for throwaway networks. Public testnet and mainnet
+# deployment records are committed, since addresses are public and reviewers
+# need them.
+deployments/localhost/
+deployments/hardhat/
+
+# AI assistant scaffolding and internal working notes. These are development
+# aids, not part of the product.
+CLAUDE.md
+**/CLAUDE.md
+.claude/
+handofftoclaudecode.md
+*.handoff.md
+
+# Editor and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs and scratch
+*.log
+npm-debug.log*
+yarn-error.log*
+.dist/
+scratch/
+tmp/
