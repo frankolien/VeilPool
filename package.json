@@ -5,7 +5,7 @@
   "description": "VEIL Pool — confidential prize-linked savings on the Zama Protocol",
   "license": "BSD-3-Clause-Clear",
   "packageManager": "pnpm@11.4.0",
-  "engines": { "node": ">=22" },
+  "engines": { "node": ">=22 <23" },
   "scripts": {
     "build": "pnpm -r --filter './packages/**' build && pnpm --filter @veil/web build",
     "dev": "pnpm --filter @veil/web dev",

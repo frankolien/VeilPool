@@ -27,6 +27,8 @@ export function MockConnectionProvider({ children }: { readonly children: ReactN
   // Read after mount rather than in a lazy initialiser: the server render has no
   // storage, and disagreeing with it would be a hydration mismatch.
   useEffect(() => {
+    // Intentional hydration reconciliation with browser-only session storage.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setConnected(readStoredFlag());
   }, []);
 

@@ -8,6 +8,8 @@ winner address.
 The production contract is live on Sepolia. Ethereum support is readiness-gated
 until a reviewed pool deployment is registered.
 
+**Live app:** [veil-pool.vercel.app](https://veil-pool.vercel.app)
+
 ## Engineering workspaces
 
 - `packages/reference-model`: executable mathematical model and property tests
@@ -21,8 +23,20 @@ until a reviewed pool deployment is registered.
 ## Current gate
 
 The weighted encrypted selection algorithm and its range-reduction bounds are
-implemented and tested. The current gate is a complete two-wallet Sepolia
-lifecycle, followed by Ethereum deployment simulation and multisig readiness.
+implemented and tested. The deployed Sepolia pool passes the read-only preflight
+and post-deployment smoke checks. The only protocol release gate still open is a
+recorded two-wallet lifecycle: deposit, draw, private result, claim, and both
+principal withdrawals. Ethereum remains deliberately readiness-gated and is not
+part of the bounty release.
+
+### Sepolia deployment
+
+- Pool: [`0x4658…2Baf`](https://sepolia.etherscan.io/address/0x46586569269A86A362E8814531543CAfc6972Baf)
+- Confidential cUSDT: [`0x4E7B…4491`](https://sepolia.etherscan.io/address/0x4E7B06D78965594eB5EF5414c357ca21E1554491)
+- Mock USDT faucet: [`0xa7dA…e9b0`](https://sepolia.etherscan.io/address/0xa7dA08FafDC9097Cc0E7D4f113A61e31d7e8e9b0)
+- Deployment transaction: [`0xfe81…1ca`](https://sepolia.etherscan.io/tx/0xfe81dca6355e2036a92fbb7763da2daee29a698046fb48c52daa6593566701ca)
+- Prize per draw: 25 cUSDT from the encrypted demo reserve
+- Participant bound: 20 wallets per draw
 
 ---
 
@@ -49,10 +63,10 @@ Its progress is reconciled against chain state, so reloading does not lose it.
 
 | | |
 | --- | --- |
-| ![Landing](docs/product/screenshots/01-landing.png) | ![Pool dashboard](docs/product/screenshots/04-pool-revealed.png) |
-| The landing page leads with the problem, not the cryptography | Revealed values, decrypted locally, with the walkthrough alongside |
-| ![Draw room](docs/product/screenshots/05-draw-room.png) | ![Private vault](docs/product/screenshots/06-vault.png) |
-| The draw room — one droplet per participant, none showing an amount | The private vault, where the numbers are the only place they appear |
+| ![Landing](docs/product/screenshots/01-landing.png) | ![Protocol explainer](docs/product/screenshots/02-how-it-works.png) |
+| The deployed landing page reads the current Sepolia draw directly | The protocol page documents mechanics and the privacy boundary |
+| ![Pool entry](docs/product/screenshots/03-pool-sealed.png) | ![Mobile landing](docs/product/screenshots/07-landing-mobile.png) |
+| Private values stay unavailable until a wallet connects | The primary journey remains intact on a narrow viewport |
 
 ### Running it
 
@@ -81,6 +95,9 @@ rather than rendering an empty pool.
 pnpm --filter @veil/web typecheck
 pnpm --filter @veil/web test
 pnpm --filter @veil/web build
+pnpm lint
+pnpm --filter @veil/contracts-production preflight:sepolia
+pnpm --filter @veil/contracts-production smoke:sepolia
 ```
 
 ### Frontend architecture
@@ -126,6 +143,7 @@ and nothing else.
 - `docs/product/interface-requests/` — requests and research handed to the
   protocol workstream
 - `docs/submission/` — demo video script and shot list, X thread draft
+- `docs/submission/RELEASE-CHECKLIST.md` — two-wallet rehearsal and evidence log
 
 ```mermaid
 flowchart TB

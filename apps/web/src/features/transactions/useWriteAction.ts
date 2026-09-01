@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useReducer, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import type { Hash } from "viem";
 import type { StepperItem } from "@veil/ui";
 import {
@@ -71,7 +71,9 @@ export function useWriteAction<Id extends string>(
   // `execute` must not change identity when config callbacks do, or a caller
   // that memoises a submit handler would capture a stale run.
   const configRef = useRef(config);
-  configRef.current = config;
+  useEffect(() => {
+    configRef.current = config;
+  }, [config]);
 
   const execute = useCallback(
     async (run: (context: WriteActionContext<Id>) => Promise<Hash | void>) => {

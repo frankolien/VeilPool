@@ -17,13 +17,14 @@ export function Countdown({
   readonly deadline: number;
   readonly size?: "md" | "lg" | "xl";
 }) {
-  const [remaining, setRemaining] = useState(() => secondsLeft(deadline));
+  const [now, setNow] = useState(() => Math.floor(Date.now() / 1000));
 
   useEffect(() => {
-    setRemaining(secondsLeft(deadline));
-    const timer = setInterval(() => setRemaining(secondsLeft(deadline)), 1000);
+    const timer = setInterval(() => setNow(Math.floor(Date.now() / 1000)), 1000);
     return () => clearInterval(timer);
-  }, [deadline]);
+  }, []);
+
+  const remaining = secondsLeft(deadline, now);
 
   return (
     <span>
@@ -35,8 +36,8 @@ export function Countdown({
   );
 }
 
-function secondsLeft(deadline: number): number {
-  return Math.max(0, deadline - Math.floor(Date.now() / 1000));
+function secondsLeft(deadline: number, now: number): number {
+  return Math.max(0, deadline - now);
 }
 
 function formatClock(totalSeconds: number): string {

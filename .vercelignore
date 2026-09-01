@@ -1,0 +1,13 @@
+.git
+.vercel
+.env*
+**/.next
+**/node_modules
+**/artifacts
+**/cache
+
+# The deployed web app consumes only contract-abi and ui from the monorepo.
+packages/contracts
+packages/contracts-production
+packages/reference-model
+docs

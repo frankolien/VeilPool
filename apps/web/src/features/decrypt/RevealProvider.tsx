@@ -59,9 +59,9 @@ export function RevealProvider({ children }: { readonly children: ReactNode }) {
   // Held in a ref as well so `reveal` can read the current session without
   // re-creating itself on every reveal, which would restart in-flight callers.
   const sessionRef = useRef<DecryptionSession | null>(null);
-  sessionRef.current = session;
 
   const clear = useCallback(() => {
+    sessionRef.current = null;
     setRevealed(new Map());
     setSession(null);
     setError(null);
@@ -71,6 +71,8 @@ export function RevealProvider({ children }: { readonly children: ReactNode }) {
   // Disconnecting or switching accounts must not leave the previous account's
   // figures on screen.
   useEffect(() => {
+    // Security boundary: account changes must synchronously discard plaintexts.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     clear();
   }, [address, clear]);
 
@@ -86,6 +88,7 @@ export function RevealProvider({ children }: { readonly children: ReactNode }) {
         if (!active || expired) {
           setPhase("authorizing");
           active = await gateway.authorizeDecryption();
+          sessionRef.current = active;
           setSession(active);
         }
 
@@ -100,7 +103,10 @@ export function RevealProvider({ children }: { readonly children: ReactNode }) {
       } catch (cause) {
         const productError = normalizeError(cause, "signature");
         setError(productError);
-        if (productError.code === "decryption-expired") setSession(null);
+        if (productError.code === "decryption-expired") {
+          sessionRef.current = null;
+          setSession(null);
+        }
       } finally {
         setPhase("idle");
       }
@@ -113,7 +119,7 @@ export function RevealProvider({ children }: { readonly children: ReactNode }) {
       phase,
       error,
       session,
-      hasSession: session !== null && session.expiresAt > Math.floor(Date.now() / 1000),
+      hasSession: session !== null,
       plaintextOf: (handle) => revealed.get(handle) ?? null,
       reveal,
       clear,

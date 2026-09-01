@@ -46,6 +46,9 @@ wallet, confirming*.
 > "The amount is encrypted in the browser before it is sent. The pool adds it to
 > a total it never decrypts."
 
+> "For this Sepolia demonstration the prize comes from a separately funded
+> reserve. A production yield adapter would replenish that same reserve."
+
 **Shot:** stepper in motion, then the privacy receipt.
 
 **Note:** the receipt's second column — "visible on-chain" — should be on screen
@@ -139,8 +142,10 @@ Back to the vault. Reveal winnings. Claim. Then withdraw principal.
 - Fund the wallet with Sepolia ETH and pre-mint USDT, so no shot waits on a
   faucet.
 - Have a second wallet already deposited, so the participant count is not 1.
-- Set the draw interval short enough that the countdown reaches zero on camera.
-- Dark theme, reduced motion **off**, browser zoom at 110% for legibility.
+- The deployed interval is ten minutes. Activate both wallets in the preceding
+  draw and begin recording only after the next countdown has reached zero.
+- Use the final white-and-blue theme, reduced motion **off**, and browser zoom
+  between 100% and 110% so transaction states remain legible.
 - Do not cut inside a transaction. The waiting is the honest part.
 
 ## What not to say

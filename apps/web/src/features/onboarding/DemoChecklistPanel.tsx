@@ -33,7 +33,7 @@ export function DemoChecklistPanel({
       derived.push("get-tokens", "shield", "authorize", "deposit");
     }
     if (reveal.hasSession) derived.push("reveal");
-    if (pool.draw.status === "awarded") derived.push("draw");
+    if (pool.draw.status === "sealing" || pool.draw.status === "awarded") derived.push("draw");
     if (derived.length > 0) checklist.applyDerived(derived);
   }, [user, pool.draw.status, reveal.hasSession, checklist]);
 

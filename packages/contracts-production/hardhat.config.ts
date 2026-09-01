@@ -1,5 +1,12 @@
 import "@nomicfoundation/hardhat-ethers";
+import { existsSync } from "node:fs";
+import { loadEnvFile } from "node:process";
 import type { HardhatUserConfig } from "hardhat/config";
+
+// Hardhat 2 does not load .env files itself. Keep local release commands
+// reproducible while allowing CI to supply the same values through its
+// environment without requiring a secrets file.
+if (existsSync(".env")) loadEnvFile(".env");
 
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",

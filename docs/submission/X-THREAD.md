@@ -117,8 +117,8 @@ All of it documented in the app itself.
 
 Live on Sepolia. Open source. No CLI needed — the whole flow runs in the browser.
 
-→ [app URL]
-→ [repo URL]
+→ https://veil-pool.vercel.app
+→ https://github.com/frankolien/VeilPool
 → [3-min demo]
 
 Built for the @zama Developer Program Mainnet Season 4.

@@ -58,3 +58,11 @@ yarn-error.log*
 .dist/
 scratch/
 tmp/
+.vercel
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+**/.env.*.local
+!**/.env.example

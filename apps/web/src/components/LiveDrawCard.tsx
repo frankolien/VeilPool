@@ -26,7 +26,13 @@ export function LiveDrawCard() {
 
     async function refresh() {
       try {
-        const client = getPublicClient(wagmiConfig);
+        // The configured chain list starts with Ethereum for the future mainnet
+        // deployment. Without an explicit chain id, a disconnected landing page
+        // reads that chain and mistakes the missing Sepolia pool for an RPC
+        // outage.
+        const client = getPublicClient(wagmiConfig, {
+          chainId: appConfig.chainId as 11_155_111,
+        });
         if (!client) throw new Error("Sepolia RPC unavailable");
         const pool = deployment.pool.address;
         const [drawId, nextDrawAt, prize] = await Promise.all([

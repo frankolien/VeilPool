@@ -12,7 +12,7 @@ export default function LandingPage() {
       <div className={styles.campaignCopy}>
         <p className={styles.kicker}>Confidential prize savings · Built on Zama</p>
         <h1>Save in private. <br /><i>Win in public.</i></h1>
-        <p className={styles.campaignDek}>Your balance stays encrypted. Your principal stays yours. The pool’s yield becomes someone’s prize.</p>
+        <p className={styles.campaignDek}>Your balance stays encrypted. Your principal stays yours. A funded prize reserve becomes someone’s prize.</p>
         <div className={styles.actions}><ButtonLink href="/pool" size="lg">Enter the pool ↗</ButtonLink><LandingExplainer kind="privacy">How privacy works</LandingExplainer></div>
       </div>
       <LiveDrawCard />
